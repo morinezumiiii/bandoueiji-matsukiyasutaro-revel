@@ -4,6 +4,8 @@ import (
 	"github.com/revel/revel"
 	"math/rand"
 	"time"
+	"regexp"
+	"fmt"
 )
 
 type App struct {
@@ -24,10 +26,7 @@ func getRandomBandouImage() (result string) {
 }
 
 func (c App) Index() revel.Result {
-	greeting := "hello"
-	imageName := getRandomBandouImage()
-	
-	return c.Render(greeting, imageName)
+	return c.Render()
 }
 
 func (c App) Hello(myName string) revel.Result {
@@ -44,4 +43,22 @@ func (c App) Hello(myName string) revel.Result {
 	}
 
 	return c.Render(myName, imageName)
+}
+
+func (c App) Judge() revel.Result {
+
+	imageName := getRandomBandouImage()
+
+	matchedMatsuki, err := regexp.MatchString("matsu", imageName)
+	
+	name := ""
+	fmt.Println(matchedMatsuki, err)
+	
+	if matchedMatsuki {
+		name = "Yasutaro Matsuki"
+	} else {
+		name = "Eiji Bandou"
+	}
+
+	return c.Render(name, imageName)
 }

@@ -1,30 +1,32 @@
 {{set . "title" "Home"}}
 {{template "header.html" .}}
 
-<header class="hero-unit" style="background-color:#A9F16C">
+<div class="docs-header">
   <div class="container">
-    <div class="row">
-      <div class="hero-text">
-        <h1>It works!</h1>
-        <p></p>
-      </div>
-    </div>
+    <h1>Eiji Bandou Checker</h1>      
   </div>
-</header>
+</div>
 
 <div class="container">
   <div class="row">
-    <div class="span6">
+    <div class="col-md-12">
       {{template "flash.html" .}}
-      <img src="/public/img/{{.imageName}}" class="img-responsive img-rounded" width="640px"></img>
       <h2>{{.greeting}}</h2>
     </div>
   </div>
   <div class="row">
-    <div class="span6">
-      <form action="/App/Hello" method="GET">
-        <input type="text" name="myName" /><br/>
-        <input type="submit" value="Say hello!" />
+    <div class="col-md-6">
+      <form action="/App/Judge" method="GET" class="form-inline">
+        <input type="submit" value="Judge" class="btn btn-default"/>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <form action="/App/Hello" method="GET" class="form-inline">
+        <div class="form-group">
+          <label for="myName">Your name</label>
+          <input type="text" name="myName" class="form-control" id="myName"/><br/>
+        </div>
+        <input type="submit" value="Say hello!" class="btn btn-default"/>
       </form>
     </div>
   </div>

@@ -1,8 +1,8 @@
 {{set . "title" "Home"}}
 {{template "header.html" .}}
 
-<h1>Hello {{.myName}}</h1>
+<h1>{{.myName}}</h1>
 <a href="/">Back to form</a>
 <p>{{.imageName}}</p>
-<img src="/public/img/{{.imageName}}" class="img-responsive img-rounded" width="640px"></img>
+<img src="/public/img/{{.imageName}}" class="img-responsive img-rounded center-block" style="max-width:200%; max-height: auto;"></img>
 {{template "footer.html" .}}

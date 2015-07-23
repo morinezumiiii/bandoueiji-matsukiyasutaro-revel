@@ -1,0 +1,18 @@
+body {
+    font: "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: white;
+}
+
+.docs-header {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-align: center;
+    background-color:#A9F16C;
+}
+
+.docs-header .container h1 {
+    font-size: 60px;
+    line-height: 1;
+}
